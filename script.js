@@ -8,6 +8,7 @@ function writePassword() {
   //create an array 
   var value = "ABCDEFGHIJKLMNOPQURSTUVWXYZabcdefghijklmnopqurstuvwxyz!@$%^&*()_+0123456789"
   
+  var lowerCase = value.toLocaleLowerCase().split();
   var password ="";
 //get the value
   passwordText.value = password;
