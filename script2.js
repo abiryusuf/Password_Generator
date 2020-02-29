@@ -8,7 +8,7 @@ var upperCase;
 //create array for lowercase 
 letters = "abcdefghijklmnopqrstuvwxyz";
 var lowerCaseArray = letters.split("");
-
+//uppercase
 upperCase ="ABCDEFGHIJKLMNOPQURSTUVWXYZ";
 var upper = upperCase.split();
 //generate the password
@@ -20,11 +20,6 @@ function generatePassword(){
   
   
   //console.log(isNaN(parseInt(numOfChars)));
-
-  //length 8-128
-
-
-  //lowercase
 
 
   //uppercase
@@ -38,33 +33,51 @@ function generatePassword(){
 
 function getPrompts(){
   numOfChars = prompt("How many Charecters do you want ?");
+  // do u want lower
+//   var lowerC = prompt("lower")
+  // dp u want upper 
+
   
 }
-//To get randon element from array
-function getRandomFromArray(ar){
-  return ar [parseInt(
-    Math.random() * ar.length)]
+//To get random element from array
+function getRandomFromArray(arr){
+//   var randomIndex = arr [parseInt(Math.random() * arr.length)];
+//   var randomEle = arr[randomIndex];
+//   return randomEle;
+
+return arr [parseInt(Math.random() * arr.length)];
 }
 
 function passwordBuild(){
   //check the number
+  //length 8-128
+
   if (!isNaN(parseInt(numOfChars)) && numOfChars >= 8 && numOfChars <= 128) {
     for (var i = 0; i < numOfChars; i++){
 
-      
-           addCharArray(lowerCaseArray);
-           addCharArrayUpperCase(upperCase);
+        var lowerCase2 = "";
+        var upperCase2 = "";
+           //var passwordResult ="";
+           addCharArray(lowerCase2);
+           addCharArrayUpperCase(upperCase2);
+         console.log(lowerCase2);
+         console.log(upperCase2);
+        var combine = (lowerCase2) + (upperCase2);
+     console.log(combine);
       
     }
-  }
+    
  return passwordResult;
 }
-//add char
-function addCharArray(){
-  passwordResult += getRandomFromArray(lowerCaseArray);
 }
-function addCharArrayUpperCase(){
-    passwordResult += getRandomFromArray(upperCase);
+//add char
+function addCharArray(lowerCase2){
+  lowerCase2 += getRandomFromArray(lowerCaseArray);
+  return lowerCase2;
+}
+ function addCharArrayUpperCase(upperCase2){
+    upperCase2+= getRandomFromArray(upperCase);
+    return upperCase2;
   }
 // Write password to the #password input
 function writePassword() {
